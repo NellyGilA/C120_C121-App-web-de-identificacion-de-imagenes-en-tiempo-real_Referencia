@@ -19,11 +19,12 @@ var previous_result = '';
 
 function gotResult(error, results){
   if(error){
-    console.log(":( " + error);
+    console.log("error);
   } else {
     if(previous_result != results[0].label){
-      console.log(":) " + results);
+      console.log(results);
       previous_result = results[0].label;
+      
       var synth = window.speechSynthesis;
       speak_data = 'El objeto detectado es '+ results[0].label;
       var utterThis = new SpeechSynthesisUtterance(speak_data);
